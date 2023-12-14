@@ -12,6 +12,18 @@ class MontyHallProblem:
         Initialize the doors for the Monty Hall problem.
         """
         self.doors: list = ['goat', 'car', 'goat']
+        self.door_revealed = None
+
+    def reveal_door(self, initial_choice: int) -> int:
+        """
+        Reveal a door that is not the initial choice and does not have the car.
+
+        :param initial_choice: The initial door choice.
+        :return: The index of the revealed door.
+        """
+        doors_revealed = [i for i in range(3) if i != initial_choice and self.doors[i] != 'car']
+        door_revealed = random.choice(doors_revealed)
+        return door_revealed
 
     def monty_hall_game(self, initial_choice: int, switch_choice: bool) -> bool:
         """
@@ -25,12 +37,11 @@ class MontyHallProblem:
         random.shuffle(self.doors)
 
         # Reveal a door that is not the initial choice and does not have the car
-        doors_revealed = [i for i in range(3) if i != initial_choice and self.doors[i] != 'car']
-        door_revealed = random.choice(doors_revealed)
+        self.door_revealed = self.reveal_door(initial_choice)
 
         # If the player switches, their final choice is the remaining door
         if switch_choice:
-            final_choice = [i for i in range(3) if i != initial_choice and i != door_revealed][0]
+            final_choice = [i for i in range(3) if i != initial_choice and i != self.door_revealed][0]
         else:
             final_choice = initial_choice
 
