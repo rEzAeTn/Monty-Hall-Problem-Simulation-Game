@@ -1,4 +1,4 @@
-![Banner](image/banner.png)
+![Banner]()
 
 # Monty Hall Problem
 
@@ -13,7 +13,7 @@ The 'Monty Hall Problem Dashboard' is an interactive web application built with 
 
 - **Play the Monty Hall Game**: Users can play a single round of the Monty Hall game, choosing a door and then deciding whether to switch after a goat is revealed.
 
--**Run a Monty Hall Simulation**: Users can run multiple rounds of the Monty Hall game to empirically verify the probabilities associated with the problem. They can specify the number of rounds and whether to switch doors in each round.
+- **Run a Monty Hall Simulation**: Users can run multiple rounds of the Monty Hall game to empirically verify the probabilities associated with the problem. They can specify the number of rounds and whether to switch doors in each round.
 
 By interacting with the dashboard, users can gain a deeper understanding of the Monty Hall problem and the counter-intuitive nature of probability.
 
